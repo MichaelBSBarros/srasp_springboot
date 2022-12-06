@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SRASP | Cadastro de Usuário</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Cadastro do Cidadão </h1>
+				<div class = "card-body">
+					<form th:action="@{/cidadaos}" th:object = "${usuario}" method="POST">
+						<div class ="form-group">
+							<label> Nome </label>
+							<input
+							type = "text"
+							name = "nome"
+							th:field = "*{nome}"
+							class = "form-control"
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Senha </label>
+							<input
+							type = "text"
+							name = "senha"
+							th:field = "*{senha}"
+							class = "form-control"
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Data de Nascimento </label>
+							<input
+									type = "text"
+									name = "dtNascimento"
+									th:field = "*{dtNascimento}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> CPF </label>
+							<input
+									type = "text"
+									name = "cpf"
+									th:field = "*{cpf}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Telefone Celular </label>
+							<input
+									type = "text"
+									name = "telefoneMovel"
+									th:field = "*{telefoneMovel}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Telefone Fixo </label>
+							<input
+									type = "text"
+									name = "telefoneFixo"
+									th:field = "*{telefoneFixo}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> CEP </label>
+							<input
+									type = "text"
+									name = "cep"
+									th:field = "*{cep}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Endereço </label>
+							<input
+									type = "text"
+									name = "logradouro"
+									th:field = "*{logradouro}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Número Endereço </label>
+							<input
+									type = "text"
+									name = "numEndereco"
+									th:field = "*{numEndereco}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Complemento </label>
+							<input
+									type = "text"
+									name = "complemento"
+									th:field = "*{complemento}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Bairro </label>
+							<input
+									type = "text"
+									name = "bairro"
+									th:field = "*{bairro}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Cidade </label>
+							<input
+									type = "text"
+									name = "cidade"
+									th:field = "*{cidade}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> UF </label>
+							<input
+									type = "text"
+									name = "uf"
+									th:field = "*{uf}"
+									class = "form-control"
+							/>
+						</div>
+
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
