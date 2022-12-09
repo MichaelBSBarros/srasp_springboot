@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SRASP | Gerencimento de Áreas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Atualizar <span th:text = "${title}"></span> </h1>
+				<div class = "card-body">
+					<form th:action="@{/reclamacao/{id} (id=${object.id})}" th:object = "${object}" method="POST">
+
+						<div class ="form-group">
+							<label> Descrição </label>
+							<input
+									type = "text"
+									name = "descricao_reclamacao"
+									th:field = "*{descricaoReclamacao}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Secretaria </label>
+							<input
+									type = "text"
+									name = "secretaria"
+									th:field = "*{secretaria}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Área Responsável </label>
+							<input
+									type = "text"
+									name = "area"
+									th:field = "*{area}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Unidade de Saúde </label>
+							<input
+									type = "text"
+									name = "unidade"
+									th:field = "*{unidade}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Comentários </label>
+							<input
+									type = "text"
+									name = "comentarios"
+									th:field = "*{comentarios}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> CPF do Cidadão </label>
+							<input
+									type = "text"
+									name = "cpf"
+									th:field = "*{cpf}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Matrícula Ouvidor Responsável </label>
+							<input
+									type = "text"
+									name = "matricula"
+									th:field = "*{matricula}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Severidade da Reclamação </label>
+							<input
+									type = "text"
+									name = "severidade"
+									th:field = "*{severidade}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Status da Reclamação </label>
+							<input
+									type = "text"
+									name = "status"
+									th:field = "*{status}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Data de Abertura </label>
+							<input
+									id = "dtAbertura"
+									type = "date"
+									name = "dtAbertura"
+									th:field = "*{dtAbertura}"
+									class = "form-control"
+									readonly
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Data de Conclusão </label>
+							<input
+									type = "date"
+									name = "dtConclusao"
+									th:field = "*{dtConclusao}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

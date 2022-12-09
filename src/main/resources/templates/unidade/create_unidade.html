@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SRASP | Cadastro de Unidade de Saúde</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Cadastro do <span th:text = "${title}"></span> </h1>
+				<div class = "card-body">
+					<form th:action="@{/unidade}" th:object = "${object}" method="POST">
+
+						<div class ="form-group">
+							<label> Nome Unidade </label>
+							<input
+									type = "text"
+									name = "nome_unidade"
+									th:field = "*{nomeUnidade}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+
+						<div class ="form-group">
+							<label> Região de Saúde </label>
+							<select th:field="*{regiao}" required>
+								<option th:value="'I'" th:text="	I		"></option>
+								<option th:value="'II'" th:text="	II		"></option>
+								<option th:value="'III'" th:text="	III		"></option>
+								<option th:value="'IV'" th:text="	IV		"></option>
+								<option th:value="'V'" th:text="	V		"></option>
+								<option th:value="'VI'" th:text="	VI		"></option>
+								<option th:value="'VII'" th:text="	VII		"></option>
+								<option th:value="'VIII'" th:text="	VIII	"></option>
+								<option th:value="'IX'" th:text="	IX		"></option>
+								<option th:value="'X'" th:text="	X		"></option>
+								<option th:value="'XI'" th:text="	XI		"></option>
+								<option th:value="'XII'" th:text="	XII 	"></option>
+							</select>
+						</div>
+
+						<div class ="form-group">
+							<label> Microrregião de Saúde </label>
+							<select th:field="*{microrregiao}" required>
+								<option th:value="'I'" th:text="	I		"></option>
+								<option th:value="'II'" th:text="	II		"></option>
+								<option th:value="'III'" th:text="	III		"></option>
+								<option th:value="'IV'" th:text="	IV		"></option>
+								<option th:value="'V'" th:text="	V		"></option>
+								<option th:value="'VI'" th:text="	VI		"></option>
+								<option th:value="'VII'" th:text="	VII		"></option>
+								<option th:value="'VIII'" th:text="	VIII	"></option>
+								<option th:value="'IX'" th:text="	IX		"></option>
+								<option th:value="'X'" th:text="	X		"></option>
+								<option th:value="'XI'" th:text="	XI		"></option>
+							</select>
+						</div>
+
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

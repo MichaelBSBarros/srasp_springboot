@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SRASP | Cadastro de Ouvidores</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Cadastro do Ouvidor </h1>
+				<div class = "card-body">
+					<form th:action="@{/ouvidores}" th:object = "${usuario}" method="POST">
+						<div class ="form-group">
+							<label> Nome </label>
+							<input
+							type = "text"
+							name = "nome"
+							th:field = "*{nome}"
+							class = "form-control"
+							required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Senha </label>
+							<input
+							type = "password"
+							name = "senha"
+							th:field = "*{senha}"
+							class = "form-control"
+							required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Data de Efetivação </label>
+							<input
+									type = "date"
+									name = "dtInicial"
+									th:field = "*{dtInicial}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Matrícula </label>
+							<input
+									type = "text"
+									name = "matricula"
+									th:field = "*{matricula}"
+									class = "form-control"
+									required
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> UF </label>
+							<select th:field="*{uf}" required>
+								<option th:value="'RO'" th:text="	RO	"></option>
+								<option th:value="'AC'" th:text="	AC	"></option>
+								<option th:value="'AM'" th:text="	AM	"></option>
+								<option th:value="'RR'" th:text="	RR	"></option>
+								<option th:value="'PA'" th:text="	PA	"></option>
+								<option th:value="'AP'" th:text="	AP	"></option>
+								<option th:value="'TO'" th:text="	TO	"></option>
+								<option th:value="'MA'" th:text="	MA	"></option>
+								<option th:value="'PI'" th:text="	PI	"></option>
+								<option th:value="'CE'" th:text="	CE	"></option>
+								<option th:value="'RN'" th:text="	RN	"></option>
+								<option th:value="'PB'" th:text="	PB	"></option>
+								<option th:value="'PE'" th:text="	PE	"></option>
+								<option th:value="'AL'" th:text="	AL	"></option>
+								<option th:value="'SE'" th:text="	SE	"></option>
+								<option th:value="'BA'" th:text="	BA	"></option>
+								<option th:value="'MG'" th:text="	MG	"></option>
+								<option th:value="'ES'" th:text="	ES	"></option>
+								<option th:value="'RJ'" th:text="	RJ	"></option>
+								<option th:value="'SP'" th:text="	SP	"></option>
+								<option th:value="'PR'" th:text="	PR	"></option>
+								<option th:value="'SC'" th:text="	SC	"></option>
+								<option th:value="'RS'" th:text="	RS	"></option>
+								<option th:value="'MS'" th:text="	MS	"></option>
+								<option th:value="'MT'" th:text="	MT	"></option>
+								<option th:value="'GO'" th:text="	GO	"></option>
+								<option th:value="'DF'" th:text="	DF	"></option>
+							</select>
+						</div>
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Confirmar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

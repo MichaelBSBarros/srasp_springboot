@@ -1,5 +1,6 @@
 package net.srasp.layout;
 
+import net.srasp.layout.repository.StatusReclRepository;
 import net.srasp.layout.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,10 +16,10 @@ public class SraspWebManagementSystemApplication implements CommandLineRunner{
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 	}
 
 }

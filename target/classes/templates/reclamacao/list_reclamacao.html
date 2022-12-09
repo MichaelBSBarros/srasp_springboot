@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Gerenciamento de Reclamações</title>
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		  crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- Brand -->
+	<a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+	<!-- Toggler/collapsibe Button -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+</nav>
+
+<div class ="container">
+	<div class = "row">
+		<h1> Gerenciamento de <span th:text = "${title}"></span> </h1>
+	</div>
+
+	<div class = "row">
+		<div class = "col-lg-3">
+			<a th:href = "@{/reclamacao/new}" class = "btn btn-primary btn-sm mb-3"> Criar Nova <span th:text = "${title}"></span></a>
+		</div>
+	</div>
+	<table class = "table table-striped table-bordered" th:each = "object: ${object_list}">
+		<thead class = "table-dark">
+		<tr>
+			<th> ID </th>
+			<th> Descrição Reclamação </th>
+			<th> Ações </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td th:text = "${object.id}"></td>
+			<td th:text = "${object.descricaoReclamacao}"></td>
+			<td>
+				<a th:href = "@{/reclamacao/edit/{id}(id=${object.id})}"
+				   class = "btn btn-primary">Atualizar</a>
+
+				<a th:href = "@{/reclamacao/{id}(id=${object.id})}"
+				   class = "btn btn-danger">Deletar</a>
+			</td>
+		</tr>
+		<tr>
+			<th> Secretaria </th>
+			<th> Área Responsável </th>
+			<th> Unidade de Saúde </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td th:text = "${object.secretaria}"></td>
+			<td th:text = "${object.area}"></td>
+			<td th:text = "${object.unidade}"></td>
+		</tr>
+		<tr>
+			<th> Comentários </th>
+			<th> CPF do Cidadão </th>
+			<th> Matrícula Ouvidor Responsável </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td th:text = "${object.comentarios}"></td>
+			<td th:text = "${object.cpf}"></td>
+			<td th:text = "${object.matricula}"></td>
+		</tr>
+		<tr>
+			<th> Severidade da Reclamação </th>
+			<th> Status da Reclamação </th>
+			<th> Data de Abertura </th>
+			<th> Data de Conclusão </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td th:text = "${object.severidade}"></td>
+			<td th:text = "${object.status}"></td>
+			<td th:text = "${object.dtAbertura}"></td>
+			<td th:text = "${object.dtConclusao}"></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

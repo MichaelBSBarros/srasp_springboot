@@ -1,0 +1,51 @@
+
+img{
+  width: 200px;
+}
+
+.link{
+  text-decoration: none;
+  color: aliceblue;
+}
+.reclamacao {
+  width: min-content;
+  margin: 0 auto;
+}
+
+.reclame {
+  display: block;
+  width: 20.44rem;
+  height: 6rem;
+  background-image: url(../img/reclame.png);
+  background-repeat: no-repeat;
+}
+
+.reclame:hover {
+  background-position: right;
+}
+
+.cadastro {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fundo {
+  background-color: #1174ae;
+  background-image: linear-gradient(160deg, #1174ae 0%, #95b9d8 100%);
+}
+
+.backgses{
+  height: 81.9vh;
+  background-image: url(../img/maxresdefault.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+

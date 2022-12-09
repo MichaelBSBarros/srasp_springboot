@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciamento de Usuários - Ouvidores</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">SRASP | SES-PE</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+	<div class ="container">
+		<div class = "row">
+			<h1> Gerenciamento de Funcionarios da Ouvidoria </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href = "@{/ouvidores/new}" class = "btn btn-primary btn-sm mb-3"> Adicionar Novo Funcionário</a>
+			</div>
+		</div>
+		<table class = "table table-striped table-bordered" th:each = "usuario: ${usuarios}">
+			<thead class = "table-dark">
+				<tr>
+					<th> Nome </th>
+					<th> Email </th>
+					<th> Matrícula </th>
+					<th> UF </th>
+					<th> Ações </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text = "${usuario.nome}"></td>
+					<td th:text = "${usuario.email}"></td>
+					<td th:text = "${usuario.matricula}"></td>
+					<td th:text = "${usuario.uf}"></td>
+					<td>
+						<a th:href = "@{/ouvidores/edit/{id}(id=${usuario.id})}"
+						 class = "btn btn-primary">Atualizar</a>
+						
+						<a th:href = "@{/ouvidores/{id}(id=${usuario.id})}"
+						 class = "btn btn-danger">Deletar</a>
+					</td>
+				</tr>
+			</tbody>
+			<thead class = "table-secondary">
+				<tr>
+					<th> Data de Efetivação </th>
+					<th> Data de Desligamento </th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+						<td th:text = "${usuario.dtInicial}"></td>
+						<td th:text = "${usuario.dtFinal}"></td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
