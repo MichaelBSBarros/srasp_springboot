@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Setter @Getter @NoArgsConstructor @AllArgsConstructor
 @Entity
@@ -19,16 +20,16 @@ public class Unidade {
 	@Column(name = "nome_unidade")
 	private String nomeUnidade;
 
-	@Column(name = "microrregiao")
-	private String microrregiao;
+	@Column(name = "id_microrregiao")
+	private Long idMicrorregiao;
 
-	@Column(name = "regiao")
-	private String regiao;
+	@Column(name = "id_regiao")
+	private Long idRegiao;
 
-	public Unidade(String nomeUnidade, String microrregiao, String regiao) {
+	public Unidade(String nomeUnidade, Long idMicrorregiao, Long idRegiao) {
 		super();
 		this.nomeUnidade = nomeUnidade;
-		this.microrregiao = microrregiao;
-		this.regiao = regiao;
+		this.idMicrorregiao = idMicrorregiao;
+		this.idRegiao = idRegiao;
 	}
 }

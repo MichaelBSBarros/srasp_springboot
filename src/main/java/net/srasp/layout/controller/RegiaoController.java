@@ -18,10 +18,11 @@ public class RegiaoController {
     @Autowired
     private RegiaoService regiaoService;
     public static final String endpoint = "/regiao";
+    public static String titulo = "Região de Saúde";
 
     @GetMapping(endpoint)
     public String list(Model model) {
-        model.addAttribute("title", "Regiao de Saúde");
+        model.addAttribute("title", titulo);
         model.addAttribute("object_list", regiaoService.getAll());
         return "regiao/list_regiao";
     }
@@ -29,7 +30,7 @@ public class RegiaoController {
     @GetMapping(endpoint + "/new")
     public String createForm(Model model) {
         Regiao instance = new Regiao();
-        model.addAttribute("title", "Regiao de Saúde");
+        model.addAttribute("title", titulo);
         model.addAttribute("object", instance);
         return "regiao/create_regiao";
     }
@@ -44,7 +45,7 @@ public class RegiaoController {
     public String editForm(@PathVariable String id, Model model) {
         Optional<Regiao> instance = regiaoService.get(id);
         if (instance.isPresent()) {
-            model.addAttribute("title", "Regiao de Saúde");
+            model.addAttribute("title", titulo);
             model.addAttribute("object", instance.get());
             return "regiao/update_regiao";
         } else {

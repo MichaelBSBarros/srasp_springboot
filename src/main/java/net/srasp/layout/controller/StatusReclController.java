@@ -20,9 +20,11 @@ public class StatusReclController {
     private StatusReclService statusReclService;
     public static final String endpoint = "/statusrecl";
 
+    public static String titulo = "Status de Reclamação";
+
     @GetMapping(endpoint)
     public String list(Model model) {
-        model.addAttribute("title", "Status de Reclamação");
+        model.addAttribute("title", titulo);
         model.addAttribute("object_list", statusReclService.getAll());
         return "statusrecl/list";
     }
@@ -30,7 +32,7 @@ public class StatusReclController {
     @GetMapping(endpoint + "/new")
     public String createForm(Model model) {
         StatusRecl instance = new StatusRecl();
-        model.addAttribute("title", "Status de Reclamação");
+        model.addAttribute("title", titulo);
         model.addAttribute("object", instance);
         return "statusrecl/create";
     }
@@ -45,7 +47,7 @@ public class StatusReclController {
     public String editForm(@PathVariable String id, Model model) {
         Optional<StatusRecl> instance = statusReclService.get(id);
         if (instance.isPresent()) {
-            model.addAttribute("title", "Status de Reclamação");
+            model.addAttribute("title", titulo);
             model.addAttribute("object", instance.get());
             return "statusrecl/update_form";
         } else {

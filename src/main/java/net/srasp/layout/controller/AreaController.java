@@ -18,10 +18,11 @@ public class AreaController {
     @Autowired
     private AreaService areaService;
     public static final String endpoint = "/area";
+    public static String titulo = "Área";
 
     @GetMapping(endpoint)
     public String list(Model model) {
-        model.addAttribute("title", "Area");
+        model.addAttribute("title", titulo);
         model.addAttribute("object_list", areaService.getAll());
         return "area/list_area";
     }
@@ -29,7 +30,7 @@ public class AreaController {
     @GetMapping(endpoint + "/new")
     public String createForm(Model model) {
         Area instance = new Area();
-        model.addAttribute("title", "Area");
+        model.addAttribute("title", titulo);
         model.addAttribute("object", instance);
         return "area/create_area";
     }
@@ -44,7 +45,7 @@ public class AreaController {
     public String editForm(@PathVariable String id, Model model) {
         Optional<Area> instance = areaService.get(id);
         if (instance.isPresent()) {
-            model.addAttribute("title", "Area");
+            model.addAttribute("title", titulo);
             model.addAttribute("object", instance.get());
             return "area/update_area";
         } else {

@@ -16,8 +16,8 @@ public class Reclamacao {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "secretaria")
-	private String secretaria;
+	@Column(name = "id_secretaria")
+	private Long idSecretaria;
 
 	@Column(name = "dt_abertura")
 	private String dtAbertura;
@@ -37,29 +37,29 @@ public class Reclamacao {
 	@Column(name = "matricula")
 	private String matricula;
 
-	@Column(name = "unidade")
-	private String unidade;
+	@Column(name = "id_unidade")
+	private Long idUnidade;
 
-	@Column(name = "area")
-	private String area;
+	@Column(name = "id_area")
+	private Long idArea;
 
-	@Column(name = "severidade")
-	private String severidade;
+	@Column(name = "id_severidade")
+	private Long idSeveridade;
 
-	@Column(name = "statusrecl")
-	private String status;
+	@Column(name = "id_statusrecl")
+	private Long idStatus;
 
-	public Reclamacao(String secretaria, String dtAbertura, String descricaoReclamacao, String dtConclusao, String comentarios, String cpf, String matricula, String unidade, String area, String severidade, String status) {
-		this.secretaria = secretaria;
+	public Reclamacao(Long idSecretaria, String dtAbertura, String descricaoReclamacao, String dtConclusao, String comentarios, String cpf, String matricula, Long idUnidade, Long idArea, Long idSeveridade, Long idStatus) {
+		this.idSecretaria = idSecretaria;
 		this.dtAbertura = dtAbertura;
 		this.descricaoReclamacao = descricaoReclamacao;
 		this.dtConclusao = dtConclusao;
 		this.comentarios = comentarios;
 		this.cpf = cpf;
 		this.matricula = matricula;
-		this.unidade = unidade;
-		this.area = area;
-		this.severidade = severidade;
-		this.status = status;
+		this.idUnidade = idUnidade;
+		this.idArea = idArea;
+		this.idSeveridade = idSeveridade;
+		this.idStatus = idStatus;
 	}
 }

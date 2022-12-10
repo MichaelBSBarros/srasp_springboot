@@ -19,9 +19,11 @@ public class MicrorregiaoController {
     private MicrorregiaoService microrregiaoService;
     public static final String endpoint = "/microrregiao";
 
+    public static String titulo = "Microrregião de Saúde";
+
     @GetMapping(endpoint)
     public String list(Model model) {
-        model.addAttribute("title", "Microrregiao de Saúde");
+        model.addAttribute("title", titulo);
         model.addAttribute("object_list", microrregiaoService.getAll());
         return "microrregiao/list_microrregiao";
     }
@@ -29,7 +31,7 @@ public class MicrorregiaoController {
     @GetMapping(endpoint + "/new")
     public String createForm(Model model) {
         Microrregiao instance = new Microrregiao();
-        model.addAttribute("title", "Microrregiao de Saúde");
+        model.addAttribute("title", titulo);
         model.addAttribute("object", instance);
         return "microrregiao/create_microrregiao";
     }
@@ -44,7 +46,7 @@ public class MicrorregiaoController {
     public String editForm(@PathVariable String id, Model model) {
         Optional<Microrregiao> instance = microrregiaoService.get(id);
         if (instance.isPresent()) {
-            model.addAttribute("title", "Microrregiao de Saúde");
+            model.addAttribute("title", titulo);
             model.addAttribute("object", instance.get());
             return "microrregiao/update_microrregiao";
         } else {

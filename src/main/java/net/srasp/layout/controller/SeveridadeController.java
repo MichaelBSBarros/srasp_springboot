@@ -20,9 +20,11 @@ public class  SeveridadeController {
     private SeveridadeService severidadeService;
     public static final String endpoint = "/severidade";
 
+    public static String titulo = "Severidade";
+
     @GetMapping(endpoint)
     public String list(Model model) {
-        model.addAttribute("title", "Severidade");
+        model.addAttribute("title", titulo);
         model.addAttribute("object_list", severidadeService.getAll());
         return "severidade/list_severidade";
     }
@@ -30,7 +32,7 @@ public class  SeveridadeController {
     @GetMapping(endpoint + "/new")
     public String createForm(Model model) {
         Severidade instance = new Severidade();
-        model.addAttribute("title", "Severidade");
+        model.addAttribute("title", titulo);
         model.addAttribute("object", instance);
         return "severidade/create_severidade";
     }
@@ -45,7 +47,7 @@ public class  SeveridadeController {
     public String editForm(@PathVariable String id, Model model) {
         Optional<Severidade> instance = severidadeService.get(id);
         if (instance.isPresent()) {
-            model.addAttribute("title", "Severidade");
+            model.addAttribute("title", titulo);
             model.addAttribute("object", instance.get());
             return "severidade/update_severidade";
         } else {

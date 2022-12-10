@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>SRASP | Gerencimento de Usuário</title>
+	<title>SRASP | Gerencimento de Reclamações</title>
 	<link rel="stylesheet"
 		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -41,46 +41,42 @@
 
 					<div class ="form-group">
 						<label> Secretaria </label>
-						<input
-								type = "text"
-								name = "secretaria"
-								th:field = "*{secretaria}"
-								class = "form-control"
-								required
-						/>
+						<select th:field="*{idSecretaria}" class = "form-control" required>
+							<option th:each="secretaria: ${secretaria}"
+									th:value="${secretaria.id}"
+									th:text="${secretaria.nomeSecretaria}"
+							/>
+						</select>
 					</div>
 
 					<div class ="form-group">
 						<label> Área Responsável </label>
-						<input
-								type = "text"
-								name = "area"
-								th:field = "*{area}"
-								class = "form-control"
-								required
-						/>
+						<select th:field="*{idArea}" class = "form-control" required>
+							<option th:each="area: ${area}"
+									th:value="${area.id}"
+									th:text="${area.nomeArea}"
+							/>
+						</select>
 					</div>
 
 					<div class ="form-group">
 						<label> Unidade de Saúde </label>
-						<input
-								type = "text"
-								name = "unidade"
-								th:field = "*{unidade}"
-								class = "form-control"
-								required
-						/>
+						<select th:field="*{idUnidade}" class = "form-control" required>
+							<option th:each="unidade: ${unidade}"
+									th:value="${unidade.id}"
+									th:text="${unidade.nomeUnidade}"
+							/>
+						</select>
 					</div>
 
 					<div class ="form-group">
 						<label> Comentários </label>
-						<input
-								type = "text"
+						<textarea
 								name = "comentarios"
 								th:field = "*{comentarios}"
 								class = "form-control"
 								required
-						/>
+						></textarea>
 					</div>
 
 					<div class ="form-group">
@@ -90,6 +86,9 @@
 								name = "cpf"
 								th:field = "*{cpf}"
 								class = "form-control"
+								onkeypress="cpfMask(this.value)"
+								onfocusout="contentValidation()"
+								maxlength="14"
 								required
 						/>
 					</div>
@@ -106,26 +105,20 @@
 					</div>
 
 					<div class ="form-group">
-						<label> Severidade da Reclamação </label>
-						<input
-								type = "text"
-								name = "severidade"
-								th:field = "*{severidade}"
-								class = "form-control"
-								required
-						/>
+						<label> Gravidade da Reclamação </label>
+						<select th:field="*{idSeveridade}" class = "form-control" required>
+							<option th:each="severidade: ${severidade}"
+									th:value="${severidade.id}"
+									th:text="${severidade.severidade}"
+							/>
+						</select>
 					</div>
 
 					<div class ="form-group">
 						<label> Status da Reclamação </label>
-						<input
-								type = "text"
-								name = "status"
-								th:field = "*{status}"
-								class = "form-control"
-								value="Aberta"
-								required
-						/>
+						<select th:field="*{idStatus}" class = "form-control" required readonly="readonly" tabindex="-1" aria-disabled="true">
+							<option value="15">Aberto</option>
+						</select>
 					</div>
 
 					<script type="text/javascript">
@@ -160,5 +153,6 @@
 		</div>
 	</div>
 </div>
+<script src="/js/handlingCPF.js"></script>
 </body>
 </html>

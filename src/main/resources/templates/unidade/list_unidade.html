@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Gerenciamento de Unidades de Saúde</title>
+<title>SRASP | Gerenciamento de Unidades Públicas</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -27,7 +27,7 @@
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/unidade/new}" class = "btn btn-primary btn-sm mb-3"> Adicionar Novo <span th:text = "${title}"></span></a>
+				<a th:href = "@{/unidade/new}" class = "btn btn-primary btn-sm mb-3"> Adicionar Nova <span th:text = "${title}"></span></a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered" th:each = "object: ${object_list}">
@@ -44,8 +44,8 @@
 				<tr>
 					<td th:text = "${object.id}"></td>
 					<td th:text = "${object.nomeUnidade}"></td>
-					<td th:text = "${object.microrregiao}"></td>
-					<td th:text = "${object.regiao}"></td>
+					<td th:text = "${object.idMicrorregiao}"></td>
+					<td th:text = "${object.idRegiao}"></td>
 					<td>
 						<a th:href = "@{/unidade/edit/{id}(id=${object.id})}"
 						   class = "btn btn-primary">Atualizar</a>

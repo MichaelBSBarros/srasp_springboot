@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Gerenciamento de Reclamações</title>
+	<title>SRASP | Gerencimento de Reclamações</title>
 	<link rel="stylesheet"
 		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -58,9 +58,9 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td th:text = "${object.secretaria}"></td>
-			<td th:text = "${object.area}"></td>
-			<td th:text = "${object.unidade}"></td>
+			<td th:text = "${object.idSecretaria}"></td>
+			<td th:text = "${object.idArea}"></td>
+			<td th:text = "${object.idUnidade}"></td>
 		</tr>
 		<tr>
 			<th> Comentários </th>
@@ -78,14 +78,20 @@
 			<th> Severidade da Reclamação </th>
 			<th> Status da Reclamação </th>
 			<th> Data de Abertura </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td th:text = "${object.idSeveridade}"></td>
+			<td th:text = "${object.idStatus}"></td>
+			<td th:text = "${object.dtAbertura}"></td>
+		</tr>
+		<tr>
 			<th> Data de Conclusão </th>
 		</tr>
 		</thead>
 		<tbody>
 		<tr>
-			<td th:text = "${object.severidade}"></td>
-			<td th:text = "${object.status}"></td>
-			<td th:text = "${object.dtAbertura}"></td>
 			<td th:text = "${object.dtConclusao}"></td>
 		</tr>
 		</tbody>
