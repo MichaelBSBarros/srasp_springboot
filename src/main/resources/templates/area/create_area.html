@@ -9,9 +9,9 @@
 		  crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-info">
 	<!-- Brand -->
-	<a class="navbar-brand" href="#">SRASP | SES-PE</a>
+	<a class="navbar-brand" href="#"><img class="m-2" src="../../static/img/brasao-gov-pe.png" alt=""> <img src="../../static/img/SES.png" alt=""></a>
 
 	<!-- Toggler/collapsibe Button -->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,13 +23,13 @@
 <br>
 <div class = "container">
 	<div class = "row">
-		<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-			<h1 class = "text-center"> Criar Nova <span th:text = "${title}"></span> </h1>
-			<div class = "card-body">
+		<div class =" col-8 container justify-content-center shadow-sm p-3 mb-5 bg-light rounded border ">
+			<h1 class="font-weight-bolder text-center"> Criar Nova <span th:text = "${title}"></span> </h1>
+			<div class = "card-body ">
 				<form th:action="@{/area/{id} (id=${object.id})}" th:object = "${object}" method="POST">
 
 					<div class ="form-group">
-						<label> Nome Area </label>
+						<label class="font-weight-bold"> Nome Area </label>
 						<input
 								type = "text"
 								name = "nome_area"

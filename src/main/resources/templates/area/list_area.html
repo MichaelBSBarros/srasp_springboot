@@ -9,29 +9,29 @@
 		  crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-	<!-- Brand -->
-	<a class="navbar-brand" href="#">SRASP | SES-PE</a>
-
-	<!-- Toggler/collapsibe Button -->
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-</nav>
+	<nav class="navbar navbar-expand-md bg-info">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#"><img class="m-2" src="../../static/img/brasao-gov-pe.png" alt=""> <img src="../../static/img/SES.png" alt=""></a>
+	
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	
+	</nav>
 
 <div class ="container">
 	<div class = "row">
-		<h1> Gerenciamento de <span th:text = "${title}"></span> </h1>
+		<h1> Gerenciamento de Area<span th:text = "${title}"></span> </h1>
 	</div>
 
 	<div class = "row">
 		<div class = "col-lg-3">
-			<a th:href = "@{/area/new}" class = "btn btn-primary btn-sm mb-3"> Adicionar Nova <span th:text = "${title}"></span></a>
+			<a th:href = "@{/area/new}" class = "btn btn-success btn-sm mb-3 font-weight-bold"> Adicionar Nova <span th:text = "${title}"></span></a>
 		</div>
 	</div>
 	<table class = "table table-striped table-bordered" th:each = "object: ${object_list}">
-		<thead class = "table-dark">
+		<thead class = "table-primary">
 		<tr>
 			<th> ID </th>
 			<th> Nome Area </th>
