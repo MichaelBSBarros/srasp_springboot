@@ -4,8 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Setter @Getter @NoArgsConstructor @AllArgsConstructor
 @Entity
@@ -66,6 +70,23 @@ public class Usuario {
 
 	@Column(name = "dt_final")
 	private String dtFinal;
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "user_permission",  joinColumns = {@JoinColumn (name = "id_user")},
+			inverseJoinColumns = {@JoinColumn (name = "id_permission")})
+	private List<Permission> permissions;
+
+	public List<String> getRoles() {
+		List<String> roles = new ArrayList<>();
+		for (Permission permission : permissions) {
+			roles.add(permission.getDescription());
+		}
+		return roles;
+	}
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.permissions;
+	}
 
 	public Usuario(String nome, String senha, String email, String telefoneMovel, String cpf, String dtNascimento, String matricula, String dtInicial, String dtFinal) {
 		super();

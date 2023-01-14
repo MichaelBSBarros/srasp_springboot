@@ -29,11 +29,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="row justify-content-start">
-				<div class="col-auto">
-					<a class="link border-start ps-4" href="/index.html">Desconectar</a>
-				</div>
-			</div>
 		</div>
 	</header>
 	<br>
@@ -43,7 +38,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class="text-center"> Cadastro do Cidadão </h1>
 				<div class="card-body">
-					<form th:action="@{/cidadaos}" th:object="${usuario}" method="POST">
+					<form th:action="@{/autenticacao/cidadaos}" th:object="${usuario}" method="POST">
 
 
 						<div class="row">
@@ -147,8 +142,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="/js/handlingCPF.js"></script>
-	<script src="/js/searchCEP.js"></script>
+	<script src="/static/js/handlingCPF.js"></script>
+	<script src="/static/js/searchCEP.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@ package net.srasp.layout.controller;
 import net.srasp.layout.entity.Area;
 import net.srasp.layout.service.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Controller
@@ -21,7 +23,7 @@ public class AreaController {
     public static String titulo = "Área";
 
     @GetMapping(endpoint)
-    public String list(Model model) {
+    public String list(HttpServletRequest request, Model model) {
         model.addAttribute("title", titulo);
         model.addAttribute("object_list", areaService.getAll());
         return "area/list_area";

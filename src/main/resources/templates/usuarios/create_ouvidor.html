@@ -27,11 +27,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-start">
-			<div class="col-auto">
-				<a class="link border-start ps-4" href="/index.html">Desconectar</a>
-			</div>
-		</div>
 	</div>
 </header>
 <br>
@@ -41,7 +36,7 @@
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class = "text-center"> Cadastro do Ouvidor </h1>
 				<div class = "card-body">
-					<form th:action="@{/ouvidores}" th:object = "${usuario}" method="POST">
+					<form th:action="@{/autenticacao/ouvidores}" th:object = "${usuario}" method="POST">
 						<div class="row">
 							<div class="col">
 								<div class="form-group">

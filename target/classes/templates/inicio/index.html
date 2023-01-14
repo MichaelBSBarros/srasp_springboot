@@ -31,10 +31,10 @@
       </div>
       <div class="row justify-content-start">
         <div class="col-auto">
-         <a class="link" href="/cadastro.html">Cadastrar</a>
+         <a class="link" th:href = "@{/selecionar/}">Cadastrar</a>
         </div>
         <div class="col-auto">
-          <a class="link border-start ps-4" href="/srasp_springboot/src/main/resources/templates/inicio/login.html">Entrar</a>
+          <a class="link border-start ps-4" th:href = "@{/login/}">Entrar</a>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
   <main id="main">
 
     <div class="reclamacao">
-      <a class="reclame my-5" href="./reclamacao.html"></a>
+      <a class="reclame my-5" th:href = "@{/reclamacao/}"></a>
     </div>
 
     <div class="container">

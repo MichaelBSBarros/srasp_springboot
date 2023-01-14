@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"></script>
-    <script src="js/loginValidation.js"></script>
+    <script src="static/js/loginValidation.js"></script>
     <script src="https://kit.fontawesome.com/59dd9f0f2d.js" crossorigin="anonymous"></script>
     <title>Reclame Aqui</title>
   </head>
@@ -31,10 +31,10 @@
       </div>
       <div class="row justify-content-start">
         <div class="col-auto">
-         <a class="link" href="/cadastro.html">Cadastrar</a>
+         <a class="link" th:href = "@{/selecionar/}">Cadastrar</a>
         </div>
         <div class="col-auto">
-          <a class="link border-start ps-4" href="/srasp_springboot/src/main/resources/templates/inicio/login.html">Entrar</a>
+          <a class="link border-start ps-4" th:href = "@{/login/}">Entrar</a>
         </div>
       </div>
     </div>
@@ -61,45 +61,33 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <form>
+
+              <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                  Login ou Senha inválidos.
+                </div>
+              </div>
+
+              <form method="POST" action="#">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
 
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address</label>
+                  <input type="email" name="username" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Email</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label>
+                  <input type="password" name="password" id="form3Example4" class="form-control" />
+                  <label class="form-label" for="form3Example4">Senha</label>
                 </div>
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">
                   Entrar
                 </button>
 
-                <!-- Register buttons -->
-                <div class="text-center">
-                  <p>Ou entre com</p>
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-facebook-f"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-twitter"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-github"></i>
-                  </button>
-                </div>
               </form>
             </div>
           </div>

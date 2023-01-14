@@ -1,5 +1,6 @@
 package net.srasp.layout.service;
 
+import net.srasp.layout.authentication.UtilCriptografia;
 import net.srasp.layout.entity.StatusRecl;
 import net.srasp.layout.entity.Usuario;
 import net.srasp.layout.repository.UsuarioRepository;
@@ -29,6 +30,7 @@ public class UsuarioService {
 	}
 
 	public Usuario saveUsuario(Usuario usuario) {
+		usuario.setSenha(UtilCriptografia.md5(usuario.getSenha()));
 		return usuarioRepository.save(usuario);
 	}
 
